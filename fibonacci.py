@@ -33,5 +33,6 @@ def fibonacci_recursive(n):
 
 
 #Início do programa
-main()
+if __name__ == "__main__":
+    main()
 
