@@ -1,8 +1,19 @@
 def avaliar_polinomio_iterativo(coeficientes, x):
+    resultado = 0
+    degree = len(coeficientes) - 1
+    for coeficiente in reversed(coeficientes):
+        resultado += coeficiente * x ** degree
+        degree -= 1
+    return resultado
+
+def avaliar_polinomio_recursivo(coeficientes, x, n = None):
+    if n == None:
+        n = len(coeficientes) - 1
+    if n < 0:
+        return 0
+    return coeficientes[n] * (x ** n) + avaliar_polinomio_recursivo(coeficientes, x, n - 1)
 
 
-def avaliar_polinomio_recursivo(coeficientes, x):
-    
 
 def main():
     print("Avaliador de Polinômios")
