@@ -8,12 +8,9 @@ def fibonacci_iterativo(n):
         a, b = b, a + b
     return b
 
-def fibonacci_recursivo(n):
-    if n <= 0:
-        return 0
-    elif n == 1:
-        return 1
-    return fibonacci_recursivo(n - 1) + fibonacci_recursivo(n - 2)
+def fibonacci_recursivo(n, a=0, b=1):
+    if n == 0: return a
+    return fibonacci_recursivo(n-1, b, a+b)
 
 print("Calculadora de Fibonacci")
 print("1. Método Iterativo")
