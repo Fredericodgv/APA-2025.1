@@ -1,3 +1,5 @@
+import time
+
 def fibonacci_iterativo(n):
     if n <= 0:
         return 0
@@ -19,8 +21,16 @@ opcao = int(input("Escolha o método (1 ou 2): "))
 n = int(input("Digite o valor de n: "))
 
 if opcao == 1:
-    print(f"Fibonacci({n}) iterativo = {fibonacci_iterativo(n)}")
+    inicio = time.perf_counter()
+    resultado = fibonacci_iterativo(n)
+    fim = time.perf_counter()
+    print(f"Fibonacci({n}) iterativo = {resultado}")
+    print(f"Tempo de execução: {(fim - inicio)*1000:.6f} milissegundos")
 elif opcao == 2:
-    print(f"Fibonacci({n}) recursivo = {fibonacci_recursivo(n)}")
+    inicio = time.perf_counter()
+    resultado = fibonacci_recursivo(n)
+    fim = time.perf_counter()
+    print(f"Fibonacci({n}) recursivo = {resultado}")
+    print(f"Tempo de execução: {(fim - inicio)*1000:.6f} milissegundos")
 else:
     print("Opção inválida!")
